@@ -154,6 +154,83 @@ export type Database = {
           },
         ]
       }
+      dhf_documents: {
+        Row: {
+          id: string
+          user_id: string
+          lesson_id: string
+          task_index: number
+          doc_code: string
+          doc_title: string
+          doc_section: string | null
+          body_markdown: string
+          score: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          lesson_id: string
+          task_index?: number
+          doc_code: string
+          doc_title: string
+          doc_section?: string | null
+          body_markdown: string
+          score?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          lesson_id?: string
+          task_index?: number
+          doc_code?: string
+          doc_title?: string
+          doc_section?: string | null
+          body_markdown?: string
+          score?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "dhf_documents_lesson_id_fkey"
+            columns: ["lesson_id"]
+            isOneToOne: false
+            referencedRelation: "lessons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      level_completions: {
+        Row: {
+          id: string
+          user_id: string
+          category: Database["public"]["Enums"]["lesson_category"]
+          level: number
+          completed_at: string
+          team_review: Json
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          category: Database["public"]["Enums"]["lesson_category"]
+          level: number
+          completed_at?: string
+          team_review?: Json
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          category?: Database["public"]["Enums"]["lesson_category"]
+          level?: number
+          completed_at?: string
+          team_review?: Json
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
