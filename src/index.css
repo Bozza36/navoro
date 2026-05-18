@@ -1,0 +1,89 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 40 33% 97%;
+
+    --card: 0 0% 11%;
+    --card-foreground: 40 33% 97%;
+
+    --popover: 0 0% 11%;
+    --popover-foreground: 40 33% 97%;
+
+    --primary: 163 90% 12%;
+    --primary-foreground: 40 33% 97%;
+
+    --secondary: 150 40% 81%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 43 69% 52%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 33% 97%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 163 90% 12%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 40 33% 97%;
+    --sidebar-primary: 43 69% 52%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 40 33% 97%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 43 69% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Premium card styles */
+.card-premium {
+  @apply rounded-xl border border-border bg-card;
+  box-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.3), 0 1px 3px hsl(0 0% 0% / 0.2);
+}
+
+/* Graphics placeholder */
+.graphic-placeholder {
+  @apply rounded-xl flex items-center justify-center;
+  background: hsl(var(--secondary));
+}
+
+.graphic-placeholder-pulse {
+  animation: placeholderPulse 2s ease-in-out infinite;
+}
+
+@keyframes placeholderPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Gold glow for accent elements */
+.gold-glow {
+  box-shadow: 0 0 20px hsl(43 69% 52% / 0.3);
+}

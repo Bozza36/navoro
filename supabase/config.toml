@@ -1,0 +1,7 @@
+project_id = "oaeiyhkcqflifmtywdyj"
+
+[functions.review-submission]
+verify_jwt = false
+
+[functions.calculate-sandbox]
+verify_jwt = false
