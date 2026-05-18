@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { useEffect } from "react";
-import navoroLogo from "@/assets/navoro-logo.svg";
+import NavoroLogo from "@/components/NavoroLogo";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -58,7 +58,7 @@ const Auth = () => {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
-            <img src={navoroLogo} alt="Navoro" className="h-10 w-auto" />
+            <NavoroLogo />
           </div>
           <CardTitle className="text-2xl font-bold tracking-wide">
             {isLogin ? "Welcome back" : "Start your path"}

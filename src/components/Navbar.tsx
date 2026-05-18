@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { LogOut, Menu, X, Zap } from "lucide-react";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import navoroLogo from "@/assets/navoro-logo.svg";
+import NavoroLogo from "@/components/NavoroLogo";
 
 const Navbar = () => {
   const { user, signOut } = useAuth();
@@ -33,7 +33,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between">
         <button onClick={() => navigate(user ? "/dashboard" : "/")} className="flex items-center gap-2.5">
-          <img src={navoroLogo} alt="Navoro" className="h-12 w-auto" />
+          <NavoroLogo />
         </button>
 
         <div className="hidden md:flex items-center gap-8">
